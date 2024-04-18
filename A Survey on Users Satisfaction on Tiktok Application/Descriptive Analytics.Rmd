@@ -12,7 +12,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ```{r}
 library(readxl)
-
+library(ggplot2)
 tiktokApp <- read_xlsx("A Survey on Users Satisfaction on Tiktok Application Responses.xlsx")
 
 ```
@@ -26,7 +26,80 @@ head(tiktokApp)
 tail(tiktokApp)
 
 ```
+Demographics
 ```{r}
+#AGE 
+
+tiktokApp$Age <- factor(tiktokApp$Age)
+ barplot(tiktokApp, main = "Age")
+
+```
+ggplot for age
+```{r}
+library(ggplot2)
+
+ggplot(tiktokApp, aes(x = tiktokApp$Age)) +
+  geom_bar() +
+  labs(x = "Age Group", y = "Count", title = "Count of People by Age Group") +
+  theme_minimal()
+
+#there are more respondents in age of 20
+
+```
+
+ggplot for gender
+```{r}
+library(ggplot2)
+
+ggplot(tiktokApp, aes(x = tiktokApp$Gender)) +
+  geom_bar() +
+  labs(x = "Age Group", y = "Count", title = "Count of People by Age Group") +
+  theme_minimal()
+
+```
+ggplot for occupation
+```{r}
+library(ggplot2)
+
+ggplot(tiktokApp, aes(x = tiktokApp$Occupation)) +
+  geom_bar() +
+  labs(x = "Occupation", y = "Count", title = "Their Occupation") +
+  theme_minimal()
+
+```
+
+ggplot for address
+```{r}
+library(ggplot2)
+
+ggplot(tiktokApp, aes(x = tiktokApp$`How often do you use Tiktok?`)) +
+  geom_bar() +
+  labs(x = "use of tiktok", y = "Count", title = "Count of People") +
+  theme_minimal()
+
+```
+
+
+```{r}
+optionfact <- factor(tiktokApp$`I find TikTok useful for my personal, school or professional activities.`)
+
+numoption <- as.numeric(optionfact)
+
+
+opton2 <- factor(tiktokApp$`TikTok enables me to accomplish tasks more quickly.`)
+
+as.numeric(opton2)
+
+
+```
+
+```{r}
+library(ggplot2)
+
+ggplot(tiktokApp, aes(x = numoption)) +
+  geom_bar() +
+  labs(x = "choice Group", y = "Count", title = "Count of People") +
+  theme_minimal()
 
 
 ```
