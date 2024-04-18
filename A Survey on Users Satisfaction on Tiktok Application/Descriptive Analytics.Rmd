@@ -1,0 +1,32 @@
+---
+title: "A Survey on Users Satisfaction on Tiktok Application"
+subtitle: "BSIT 2-C"
+author: "Abdul Azim P. Bansara, Nichell D. Gallenero, Alfe Kevin P. Gallo"
+date: "2024-04-18"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(readxl)
+
+tiktokApp <- read_xlsx("A Survey on Users Satisfaction on Tiktok Application Responses.xlsx")
+
+```
+```{r}
+#Head
+head(tiktokApp)
+```
+
+```{r}
+#Tail
+tail(tiktokApp)
+
+```
+```{r}
+
+
+```
